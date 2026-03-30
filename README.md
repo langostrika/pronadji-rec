@@ -1,4 +1,4 @@
-# Pronađi Reč — Križaljka Widget
+# Pronađi Reč
 
 Embeddable word search igra za portale i CMS platforme.  
 Napravljena za [021.rs](https://021.rs) i slične portale.
