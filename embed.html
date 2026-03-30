@@ -1,0 +1,70 @@
+<!-- ================================================================
+  PRONAĐI REČ — Embed kod za CMS
+  Kopirati ovaj blok u HTML editor u CMS-u (WordPress, custom, itd.)
+  ================================================================ -->
+
+<!-- 1. STANDARDNI EMBED (za čitaoce) -->
+<div style="width:100%;max-width:960px;margin:0 auto;">
+  <iframe
+    id="wordsearch-frame"
+    src="https://YOUR-USERNAME.github.io/wordsearch/"
+    width="100%"
+    height="700"
+    frameborder="0"
+    scrolling="no"
+    style="border:none;border-radius:12px;display:block;"
+    title="Pronađi Reč — Križaljka"
+  ></iframe>
+</div>
+
+<!-- Auto-resize script (postMessage listener) -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'wordsearch-resize') {
+    var frame = document.getElementById('wordsearch-frame');
+    if (frame) frame.height = e.data.height;
+  }
+});
+</script>
+
+
+<!-- ================================================================
+  2. ADMIN EMBED (samo za urednika — u admin panel CMS-a)
+     Dodaje ?admin=redakcija2025 u URL
+  ================================================================ -->
+<div style="width:100%;max-width:960px;margin:0 auto;">
+  <iframe
+    id="wordsearch-frame-admin"
+    src="https://YOUR-USERNAME.github.io/wordsearch/?admin=redakcija2025"
+    width="100%"
+    height="700"
+    frameborder="0"
+    scrolling="no"
+    style="border:none;border-radius:12px;display:block;"
+    title="Pronađi Reč — Admin"
+  ></iframe>
+</div>
+
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'wordsearch-resize') {
+    var frame = document.getElementById('wordsearch-frame-admin');
+    if (frame) frame.height = e.data.height;
+  }
+});
+</script>
+
+
+<!-- ================================================================
+  3. EMBED SA PREDEFINISANIM REČIMA (direktno u URL)
+     Reči se kodiraju u URL pa se čitaju automatski
+     
+     Format: ?words=REČ1,REČ2,REČ3,...
+     
+     Primer za novi set reči:
+  ================================================================ -->
+<iframe
+  src="https://YOUR-USERNAME.github.io/wordsearch/?words=SRBIJA,VOJVODINA,NOVOSADSKI,KULTURA,FESTIVAL"
+  width="100%" height="700" frameborder="0"
+  style="border:none;border-radius:12px;display:block;"
+></iframe>
